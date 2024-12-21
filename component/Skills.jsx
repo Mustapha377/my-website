@@ -7,7 +7,7 @@ const Skills = (props) => {
      return (
         <AnimatedSection>
           <div className="skills">
-        <p>{props.name}<span>{props.percent}</span></p>
+        <p className="skills-text">{props.name}<span>{props.percent}</span></p>
             <div className="progress">
                 <div className="progress-bar " style={{width:props.percent}}></div>
             </div>
