@@ -1,32 +1,32 @@
 const logoData = [
    {
     logo: "facebook",
-    src: "./asset/icons/facebook-app-round-icon.svg"
+    src: "../asset/icons/facebook-app-round-icon.svg"
    },
 
    {
     logo: "github",
-    src: "./asset/icons/github-icon.svg"
+    src: "../asset/icons/github-icon.svg"
    },
 
    {
     logo: "linkein",
-    src: "./asset/icons/linkedin-square-icon.svg"
+    src: "../asset/icons/linkedin-square-icon.svg"
    },
 
    {
     logo: "facebook-color",
-    src: "./asset/icons/facebook-color-svgrepo-com.svg"
+    src: "../asset/icons/facebook-color-svgrepo-com.svg"
    },
 
    {
     logo: "github-color",
-    src: "./asset/icons/github-color-svgrepo-com.svg"
+    src: "../asset/icons/github-color-svgrepo-com.svg"
    
    },
    {
     logo: "linkedin-color",
-    src: "./asset/icons/linkedin-svgrepo-com (1).svg"
+    src: "../asset/icons/linkedin-svgrepo-com (1).svg"
    }
 
 ]
