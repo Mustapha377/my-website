@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Skills from "./skills";
+import Skills from "./Skills"
 import SkillsArray from "./Skillserray";
 import {useInView} from "react-intersection-observer";
 
