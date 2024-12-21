@@ -3,12 +3,10 @@ import Nav from "./nav";
 import Page from "./page";
 import Logo from "./logo";
 import About from "./About";
-import Skills from "./skills";
 import Divider from "./divider";
 import Project from "./project";
 import ContactForm from "./ContactForm";
 import Comment from "./Comment";
-import SkillsArray from "./Skillserray";
 import Final from "./skillsFinal";
 import Footer from "./footer";
 
