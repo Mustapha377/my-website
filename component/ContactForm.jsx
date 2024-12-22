@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { Element } from 'react-scroll';
 
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    user_name: '',
+    user_email: '',
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -20,18 +21,18 @@ const ContactForm = () => {
 
     try {
       await emailjs.send(
-        'service_pifsebv', // Replace with your EmailJS Service ID
-        'Ameer001', // Replace with your EmailJS Template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID, // Replace with your EmailJS Service ID
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID, // Replace with your EmailJS Template ID
         {
-          from_name: formData.name,
-          from_email: formData.email,
+          from_name: formData.user_name,
+          from_email: formData.user_email,
           message: formData.message,
         },
-        'w5biroO94EwHFNlak' // Replace with your EmailJS User ID
+        import.meta.env.VITE_EMAILJS_USER_ID // Replace with your EmailJS User ID
       );
 
       // Reset form after successful submission
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ user_name: '', user_email: '', message: '' });
       setIsSubmitted(true);
       setErrorMessage('');
     } catch (error) {
@@ -41,7 +42,7 @@ const ContactForm = () => {
   };
 
     const resetForm = () => {
-      setFormData({name: "", email: "", message: "",});
+      setFormData({user_name: "", user_email: "", message: "",});
        setIsSubmitted(false);
     };
 
@@ -58,8 +59,8 @@ const ContactForm = () => {
               className="input"
               type="text"
               id="name"
-              name="name"
-              value={formData.name}
+              name="user_name"
+              value={formData.user_name}
               onChange={handleChange}
               required
             />
@@ -69,8 +70,8 @@ const ContactForm = () => {
               className="input"
               type="email"
               id="email"
-              name="email"
-              value={formData.email}
+              name="user_email"
+              value={formData.user_email}
               onChange={handleChange}
               required
             />
