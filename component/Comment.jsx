@@ -1,8 +1,11 @@
 import React ,{useState}from "react";
-import logoData from "./logo-Data";
 import { Link } from "react-scroll";
+import Lightfb from "../asset/icons/facebook-color-svgrepo-com.svg";
+import Lightgit from "../asset/icons/github-color-svgrepo-com.svg";
+import Lightlink from "../asset/icons/linkedin-svgrepo-com (1).svg";
+
   
-const data = logoData;
+
 
 
 const Comment = () => {
@@ -45,9 +48,9 @@ const Comment = () => {
           <div className="footer-con ">
              <h2 className="footer-comment-h2">Get in touch with me</h2>
              <div className="logo-container2">
-             <a href="https://www.facebook.com/mustapha.ado.7731"><img className="logo footer-logo" src={data[3].src}></img></a>
-             <a href="https://github.com/Mustapha377"><img className="logo footer-logo" src={data[4].src}></img></a>
-             <a href="https://www.linkedin.com/in/mustapha-ado-musa-1b1462292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img className="logo footer-logo" src={data[5].src}></img></a>
+             <a href="https://www.facebook.com/mustapha.ado.7731"><img className="logo footer-logo" src={Lightfb}></img></a>
+             <a href="https://github.com/Mustapha377"><img className="logo footer-logo" src={Lightgit}></img></a>
+             <a href="https://www.linkedin.com/in/mustapha-ado-musa-1b1462292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img className="logo footer-logo" src={Lightlink}></img></a>
              </div> 
              <h6  className="footer-comment-h6">feel free to contact me if you have any questions or concerns. i am always available to help you.</h6>
           </div>
