@@ -3,6 +3,11 @@ import emailjs from 'emailjs-com';
 import { Element } from 'react-scroll';
 
 const ContactForm = () => {
+
+  const ServiceID = import.meta.env.VITE_EMAILJS_SERVICE;
+  const template = import.meta.env.VITE_EMAILJS_TEMPLATE;
+  const userId = import.meta.env.VITE_EMAILJS_USERID;
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,14 +25,14 @@ const ContactForm = () => {
 
     try {
       await emailjs.send(
-        import.meta.evn.VITE_EMAILJS_SERVICE, // Replace with your EmailJS Service ID
-        import.meta.evn.VITE_EMAILJS_TEMPLATE, // Replace with your EmailJS Template ID
+        ServiceID, // Replace with your EmailJS Service ID
+        template, // Replace with your EmailJS Template ID
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
         },
-        'w5biroO94EwHFNlak' // Replace with your EmailJS User ID
+        userId // Replace with your EmailJS User ID
       );
 
       // Reset form after successful submission
