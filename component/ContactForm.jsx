@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import { Element } from 'react-scroll';
-
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    user_name: '',
-    user_email: '',
+    name: '',
+    email: '',
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -18,25 +18,20 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-      try {
-        const reponse =
-         await fetch("http://localhost:5000/send", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        });
+    try {
+      await emailjs.send(
+        import.meta.evn.VITE_EMAILJS_SERVICE, // Replace with your EmailJS Service ID
+        import.meta.evn.VITE_EMAILJS_TEMPLATE, // Replace with your EmailJS Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        'w5biroO94EwHFNlak' // Replace with your EmailJS User ID
+      );
 
-        const result = await reponse.json();
-        if (reponse.ok){
-          setStatus("message sent successfully!");
-          setIsSubmitted(true);
-        }else {
-          setStatus(`Error: ${result.message}`);
-          setIsSubmitted(false);
-        }
-  
       // Reset form after successful submission
-      setFormData({ user_name: '', user_email: '', message: '' });
+      setFormData({ name: '', email: '', message: '' });
       setIsSubmitted(true);
       setErrorMessage('');
     } catch (error) {
@@ -46,7 +41,7 @@ const ContactForm = () => {
   };
 
     const resetForm = () => {
-      setFormData({user_name: "", user_email: "", message: "",});
+      setFormData({name: "", email: "", message: "",});
        setIsSubmitted(false);
     };
 
@@ -63,8 +58,8 @@ const ContactForm = () => {
               className="input"
               type="text"
               id="name"
-              name="user_name"
-              value={formData.user_name}
+              name="name"
+              value={formData.name}
               onChange={handleChange}
               required
             />
@@ -74,8 +69,8 @@ const ContactForm = () => {
               className="input"
               type="email"
               id="email"
-              name="user_email"
-              value={formData.user_email}
+              name="email"
+              value={formData.email}
               onChange={handleChange}
               required
             />
