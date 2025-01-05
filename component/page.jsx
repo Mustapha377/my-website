@@ -1,5 +1,6 @@
 import React from "react";
 import { Element } from "react-scroll";
+import {Typewriter} from "react-simple-typewriter"
 
 function Page(){
     return(
@@ -11,7 +12,16 @@ function Page(){
 
             <strong>I'm Mustapha</strong>
           
-         <br></br> i design and build website for your dream</h2>
+         <br></br>
+         <Typewriter
+         words={["i design and build website for your dream"]}
+         loop={false}
+         cursor
+         cursorStyle="_"
+         typeSpeed={70}
+         deleteSpeed={50}
+         ></Typewriter> 
+          </h2>
            
         </section>
     </Element>   

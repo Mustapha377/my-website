@@ -27,11 +27,12 @@ h6{
 }
 
 .Divider{
-    width: 100%;
+    width: 50%;
     height: 2px;
     background-color: #0b0c10;
     border:none;
-    margin-top: 3rem;
+    margin-top: 6rem;
+    opacity: 0.5;
 
 }
       
@@ -370,6 +371,79 @@ p{
     height: 150px;   
     
 }
+  
+  .portfolio {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: center;
+  }
+  
+  .project-card {
+    /* background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    max-width: 600px;
+    width: 100%;
+    text-align: center; */
+
+    border: 1px solid #b1bbc7;
+    padding: 10px;
+    max-width: 600px;
+    /* width: 100%; */
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    border-radius: 30px ;
+    box-shadow: 0 0 30px 15px #b1bbc7,
+    -5px -5px 10px rgb(5, 58, 75);
+    margin-bottom: 8rem;
+  }
+
+.project-image {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+  }
+  
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  
+  .button {
+    width: 120px;
+    padding: 0.5rem 1rem;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover{
+        background-color: #45a29e;
+        box-shadow: 0 1px 1px 1px rgb(#aaa,0.6);
+    } 
+  }
+  
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  .tag {
+    background-color: #efefef;
+    border-radius: 15px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    color: #333;
+  }
+  
 
 .project-btn{
     background-color: #45a29e;
@@ -516,10 +590,22 @@ textarea{
   }
 
   .form-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     border-radius: 50px;
   background: linear-gradient(145deg, #cacaca, #f0f0f0);
   box-shadow: 20px 20px 60px #bebebe,
    -20px -20px 60px #ffffff;
+   width: 400px;
 }
 
   .half{
@@ -529,13 +615,13 @@ textarea{
 
   }
 
-  .right{
+  /* .right{
     width: 100%;
   }
 
   .left{
     margin-right: 2%;
-  }
+  } */
 
   .prompt-overlay{
     position: fixed;
@@ -773,12 +859,11 @@ textarea{
     }
 
     
-    .project-box{
+    /* .project-card{
        
-        height: 20vh;
-        margin-bottom: 10px;
+        height: 80vh;
      }
-    
+     */
         
     
       .profile{

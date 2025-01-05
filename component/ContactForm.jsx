@@ -51,8 +51,9 @@ const ContactForm = () => {
     };
 
   return (
-    <Element name='contact'>
-    <section  className='section-container form-con'>
+    <Element name='section-container contact'>
+    <section  className=' form-con'>
+      <div className='form'>
       <h2>Contact Me</h2>
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
       {!isSubmitted ? (
@@ -100,6 +101,7 @@ const ContactForm = () => {
          </div>
         </div>
       )}
+      </div>
     </section>  
     </Element>
   );
