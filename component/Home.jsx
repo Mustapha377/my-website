@@ -1,6 +1,6 @@
 import React from "react";
 import { Element } from "react-scroll";
-import { Typewriter } from 'react-simple-typewriter';
+import  Typewriter  from 'react-simple-typewriter';
 
 function Home(){
     return(
