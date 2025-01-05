@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import AnimatedSection from './Animation'; 
+import AnimatedSection from './Animation.jsx'; 
 
 
-const Box = () => {
+const Box = ({projects} ) => {
+
    const [isExpanded, setisExpanded] = useState(false);
+
 
    const toggleText = () => {
     setisExpanded(!isExpanded);
@@ -12,42 +14,38 @@ const Box = () => {
   return (
     <AnimatedSection>
       
-         <div className='project-item-con'>
-            <div className="project-box">
-              <img></img>
-            </div>
-
-            <h3 className="project-name">youtube</h3>
-
-            <div className="project-about-con">
+      <div className='porfolio'>
+      {projects.map((project, index) => (
+        <div key={index} className="project-card">
+          <img src={project.image} alt={project.title} className="project-image" />
+          <h3>{project.title}</h3>
+          <div className="project-about-con">
                <div className='project-txt-con'>
               <p className={`project-text ${isExpanded ? "expanded" : "collapsed"}`}>
-                e bettthis is some sample text that  will partially hidden.
-                 you can expand this section to read more of this text 
-                , so that you can have morer experiernce on the text.
-                e bettthis is some sample text that  will partially hidden.
-                 you can expand this section to read more of this text 
-                , so that you can have morer experiernce on the text.
-                e bettthis is some sample text that  will partially hidden.
-                 you can expand this section to read more of this text 
-                , so that you can have morer experiernce on the text.
+                {project.about}
               </p>
               </div>
               <button className="seemore-btn"
                onClick={toggleText}>{isExpanded ? "see less" : "....see more"}</button>
             </div>
-
-            <div>
-               <button className="project-btn">web</button>
-               <button className="project-btn">code</button>
-            </div>
-            <div className="project-lan-con">
-               <div className="project-lan"><h3>html</h3></div>
-               <div  className="project-lan"><h3>css</h3></div>
-               <div  className="project-lan"><h3>react</h3></div>
-            </div>
+          <div className="project-links">
+            <a href={project.links.web} className="button">
+              🌐 Web
+            </a>
+            <a href={project.links.code} className="button">
+              {"</>"} Code
+            </a>
           </div>
-       
+          <div className="tags">
+            {project.tags.map((tag, i) => (
+              <span key={i} className="tag">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
      </AnimatedSection>    
   );
 };
