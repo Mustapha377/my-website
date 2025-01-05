@@ -2,7 +2,7 @@ import React from "react";
 import { Element } from "react-scroll";
 import { Typewriter } from 'react-simple-typewriter';
 
-function Page(){
+function Home(){
     return(
      <Element name="home">  
         <section className="home-section">
@@ -29,4 +29,4 @@ function Page(){
     )
 }
 
-export default Page;
+export default Home;
