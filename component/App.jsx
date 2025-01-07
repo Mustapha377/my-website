@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Nav from "./nav";
-import Page from "./page";
+import Home from "./Home";
 import Logo from "./logo";
 import About from "./About";
 import Divider from "./divider";
@@ -23,7 +23,7 @@ function App(){
 
          <Nav />
         
-         <Page />
+         <Home />
          <Logo />
          <Divider />
          <About/>

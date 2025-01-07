@@ -8,10 +8,6 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist', // Output directory
-    rollupOptions: {
-      // Remove the external configuration if not necessary
-      external: ['react-simple-typewriter'],
-    }
   },
   plugins: [react()],
 });

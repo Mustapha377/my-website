@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
     "axios": "^1.7.9",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
@@ -29,7 +30,7 @@
   },
   "name": "my-portfolio",
   "version": "1.0.0",
-  "homepage": "mustapha377.github.io/full-stack-porfolio/",
+  "homepage": "http://mustapha377.github.io/full-stack-porfolio/",
   "description": "",
   "main": "vite.config.js",
   "type": "module",
