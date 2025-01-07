@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   base: '/my-website/', // Adjust this for GitHub Pages
@@ -8,4 +9,5 @@ export default defineConfig({
   build: {
     outDir: 'dist', // Output directory
   },
+  plugins: [react()],
 });
