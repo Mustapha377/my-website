@@ -12,14 +12,14 @@ function Project(){
       title: "My-Website",
       about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at neque vitae felis elementum malesuada. Sed risus velit, sodales quis molestie et, venenatis quis tortor. Nam quam metus, interdum eget cursus porta, tempus eu erat. Morbi accumsan nulla quis tempus suscipit. Donec id elit eu dolor euismod dignissim. Nulla dignissim lorem lobortis erat vestibulum, quis accumsan nisi ullamcorper. Mauris egestas luctus nisi, nec tincidunt ipsum mattis semper.",
       tags: ["React", "JavaScript", "JSX", "CSS"],
-      links: { web: "#", code: "#" },
+      links: { web: "https://mustapha377.github.io/my-website/", code: "#" },
       image: webImage,
     },
     {
       title: "Todo-List",
       about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at neque vitae felis elementum malesuada. Sed risus velit, sodales quis molestie et, venenatis quis tortor. Nam quam metus, interdum eget cursus porta, tempus eu erat. Morbi accumsan nulla quis tempus suscipit. Donec id elit eu dolor euismod dignissim. Nulla dignissim lorem lobortis erat vestibulum, quis accumsan nisi ullamcorper. Mauris egestas luctus nisi, nec tincidunt ipsum mattis semper.e",
       tags: ["React", "JavaScript", "JSX", "CSS"],
-      links: { web: "#", code: "#" },
+      links: { web: "https://mustapha377.github.io/Todo-list-page/", code: "#" },
       image: Todoimage,
     },
   ];
