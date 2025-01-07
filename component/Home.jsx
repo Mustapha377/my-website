@@ -1,6 +1,6 @@
 import React from "react";
 import { Element } from "react-scroll";
-import { Typewriter } from 'react-simple-typewriter';
+import { Typewriter } from "react-simple-typewriter";
 
 function Home(){
     return(
@@ -11,7 +11,7 @@ function Home(){
           <h2 className="intro">
 
             <strong>I'm Mustapha</strong>
-          
+             
          <br></br>
          <Typewriter
          words={["i design and build website for your dream"]}
