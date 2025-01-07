@@ -7,7 +7,6 @@ const ContactForm = () => {
   const ServiceID = import.meta.env.VITE_EMAILJS_SERVICE;
   const template = import.meta.env.VITE_EMAILJS_TEMPLATE;
   const userId = import.meta.env.VITE_EMAILJS_USERID;
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -51,8 +50,8 @@ const ContactForm = () => {
     };
 
   return (
-    <Element name='section-container contact'>
-    <section  className=' form-con'>
+    <Element name='contact'>
+    <section  className='section-container form-con'>
       <div className='form'>
       <h2>Contact Me</h2>
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}

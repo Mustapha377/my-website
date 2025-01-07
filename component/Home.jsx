@@ -13,14 +13,17 @@ function Home(){
             <strong>I'm Mustapha</strong>
              
          <br></br>
-         <Typewriter
-         words={["i design and build website for your dream"]}
-         loop={false}
-         cursor
-         cursorStyle="_"
-         typeSpeed={70}
-         deleteSpeed={50}
-         ></Typewriter> 
+         <div className="typewriter-container">
+
+              <Typewriter
+              words={["i design and build website for your dream"]}
+              loop={false}
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              ></Typewriter> 
+         </div>
           </h2>
            
         </section>
