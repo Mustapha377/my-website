@@ -24,7 +24,8 @@ const ProjectDetails = () => {
   if (redirect) return <Navigate to={`project/${project.id}`} replace />;
 
   return (
-    <div className="min-h-screen bg-neutral-900 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen bg-neutral-900 px-4 sm:px-6 lg:px-8 relative
+     overflow-hidden">
       <ScrollToTop />
 
       {/* Back Button and Breadcrumb */}

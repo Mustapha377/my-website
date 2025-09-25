@@ -3,10 +3,6 @@ import { SocialIcons, } from "./Social_Icons";
 import SlideUpAnimation from "./SlideUpAnimation";
 
 
-  
-
-
-
 const Comment = () => {
 
  const [activeLink, setActiveLink] = useState(null);
