@@ -3,75 +3,94 @@ import { Element, Link } from "react-scroll";
 import { Typewriter } from "react-simple-typewriter";
 import Logo from "../component/logo";
 import AnimatedHeading from "../component/HeadingAnimate";
-import {Folders, Send} from "lucide-react";
+import { Folders, Send, ArrowDown } from "lucide-react";
 
+function Home() {
+  return (
+    <Element name="home">
+      <section 
+        id="home" 
+        className="relative min-h-screen bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-700 overflow-hidden"
+      >
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-amber-300/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
 
-function Home(){
-
-    return(
-     <Element name="home">  
-      <section  id="home" className="bg-gradient-to-b from-neutral-900
-               via-neutral-700 to-neutral-100">
-        <div className="flex flex-col justify-center h-1/2 
-             md:h-full lg:h-screen max-w-7xl mx-auto px-8 md:px-6 py-4 md:py-8">
-          
-            <h1 className="flex justify-center  gap-1  font-bold font-inter
-             text-[24px] pt-4 mt-16  md:mt-16 lg:mt-20 text-center text-neutral-50
-             md:text-3xl md:leading-[50px] lg:text-4xl lg:leading-[60px]
-             animate-[pull-down_0.5s_ease-out_forwards]">
-              <AnimatedHeading text="Hello World" /> </h1>
-          <a name="home"></a>
-          <h2 className= 
-             "text-neutral-900 mt-4  text-4xl ">
-
-            <strong datta-aos="fade-left" data-aos-duration="1000" 
-            className="text-[40px] my-10  text-gray-100 flex flex-col
-             md:text-[48px]  "> <span>I'm</span>
-              <span>Full-Stack</span>
-              <span className="bg-gradient-to-r from-neutral-950 via-gray-800
-               to-slate-700 bg-[lengh:300%_100%] bg-clip-text animate-shine
-               text-transparentn drop-shadow-[0_0_8px_rgb(255,255,255,0.6)]">
-              Web Developer</span> </strong>
-          
-              </h2>
-         <div className="relative w-[100%]  whitespace-normal
-             overflow-hidden text-2xl md:text-4xl text-neutral-900 pb-10
-            max-w-[80%] h-[150px] wrap-break-word md:h-full md:w-screen md:mb-20 ">
-            <div className="absolute md:top-0 md:left-0 md:whitespace-nowrap ">
-              <Typewriter
-              words={["i design and build website for your dream "]}
-              loop={false}
-              cursor
-              cursorStyle="_"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
-              ></Typewriter> 
+        <div className="relative flex flex-col justify-center min-h-screen max-w-7xl mx-auto px-6 md:px-12 py-12">
+          {/* Main content */}
+          <div className="space-y-8">
+            {/* Greeting */}
+            <div className="space-y-2 animate-slideDown">
+              <p className="text-amber-300 text-lg md:text-xl font-medium tracking-wide flex items-center gap-2">
+                <AnimatedHeading text="👋 Hello World" />
+              </p>
+              
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-slideUp">
+                I'm a
+                <span className="block mt-2 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent">
+                  Full-Stack
+                </span>
+                <span className="block bg-gradient-to-r from-white via-neutral-200 to-neutral-400 bg-clip-text text-transparent">
+                  Web Developer
+                </span>
+              </h1>
             </div>
-         </div>
-            <div className=" flex flex-wrap gap-3 md:gap-4">
-              <Link to="contact"
-                  smooth={true}
-                  duration={500}
-              ><button className="group btn flex btn-primary focus:outline-none
-                focus:ring-neutral-700">Contact 
-                <Send className="size-[20px] pl-[2px] text-amber-300 
-                group-hover:animate-shake" /></button> </Link>
 
-              <Link to="project"
-                  smooth={true}
-                  duration={500}
-              ><button className="group btn flex btn-primary focus:outline-none
-                focus:ring-neutral-700">Projects
-                 <Folders className="size-[20px] pl-[2px] text-amber-300 
-                 group-hover:animate-shake" /></button></Link>
+            {/* Typewriter section */}
+            <div className="h-24 md:h-20 animate-fadeIn" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
+              <p className="text-xl md:text-2xl lg:text-3xl text-neutral-300 font-light">
+                <Typewriter
+                  words={["I design and build websites for your dreams ✨"]}
+                  loop={false}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
+              </p>
             </div>
-          <Logo  />
-         </div>
-       </section>
-    </Element>   
-        
-    )
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-4 pt-4 animate-fadeIn" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
+              <Link to="contact" smooth={true} duration={500}>
+                <button className="group relative px-8 py-4 bg-amber-400 text-neutral-900 rounded-lg font-semibold text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-amber-400/50">
+                  <span className="relative z-10 flex items-center gap-2">
+                    Contact Me
+                    <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-amber-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                </button>
+              </Link>
+
+              <Link to="project" smooth={true} duration={500}>
+                <button className="group px-8 py-4 bg-transparent border-2 border-amber-400 text-amber-400 rounded-lg font-semibold text-lg transition-all duration-300 hover:bg-amber-400 hover:text-neutral-900 hover:scale-105">
+                  <span className="flex items-center gap-2">
+                    View Projects
+                    <Folders className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                  </span>
+                </button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Logo component */}
+          <div className="mt-12">
+            <Logo />
+          </div>
+
+          {/* Scroll indicator */}
+          <Link to="about" smooth={true} duration={500}>
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer animate-bounce">
+              <ArrowDown className="w-6 h-6 text-amber-300" />
+            </div>
+          </Link>
+        </div>
+      </section>
+    </Element>
+  );
 }
 
 export default Home;

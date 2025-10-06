@@ -1,49 +1,68 @@
 import React from "react";
 import Box from "../component/projectBox";
 import { Element } from "react-scroll";
-import Divider from "../component/divider";
 import { projects } from "../projectData";
-import AnimatedSection from "../component/SlideUpAnimation";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 function Project() {
-  const [showAll, setShowAll] = useState(false); // ✅ Control the state here
+  const [showAll, setShowAll] = useState(false);
+
   useEffect(() => {
     const scrollY = sessionStorage.getItem("scrolly");
     if (scrollY) {
       window.scrollTo(0, parseInt(scrollY));
-      sessionStorage.removeItem("scrolly"); // clear the scroll position affter using it
+      sessionStorage.removeItem("scrolly");
     }
-  }, [])
+  }, []);
 
   return (
     <Element name="project">
-      <section  id="project"
-       className="bg-neutral-700">
-        <div className="flex flex-col items-center justify-center m-6 
-        md:pb-20 lg:pb-20 mb-10">
-          <h2 className="text-neutral-200 text-4xl mb-8 py-10 md:text-3xl
-            lg:text-4xl font-bold
-            sm:mb-2">
-            Project
-          </h2>
+      <section 
+        id="project"
+        className="relative py-20 px-6 md:px-12 bg-gradient-to-b from-neutral-800 to-neutral-900"
+      >
+        <div className="flex flex-col items-center justify-center">
+          {/* Section Header */}
+          <div className="text-center mb-16 animate-fadeIn">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              Projects
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mb-6"></div>
+            <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
+              Explore my latest work and see how I bring ideas to life through code
+            </p>
+          </div>
 
-          {/* ✅ Pass showAll to Box */}
-          <Box  projects={projects} showAll={showAll} />
+          {/* Pass showAll to Box */}
+          <Box projects={projects} showAll={showAll} />
 
-          {/* ✅ Toggle Button */}
+          {/* Toggle Button */}
           {projects.length > 3 && (
             <button
               onClick={() => setShowAll(prev => !prev)}
-              className="my-5 
-               font-semibold px-6 py-3 rounded-md text-sm shadow-md border-amber-300
-               cursor-pointer bg-neutral-700 text-white border-2
-               hover:bg-neutral-950 hover:scale-105 transition-all"
+              className="group mt-8 relative px-8 py-4 bg-transparent border-2 border-amber-400 text-amber-400 rounded-lg font-semibold text-lg overflow-hidden transition-all duration-300 hover:bg-amber-400 hover:text-neutral-900 hover:scale-105 hover:shadow-xl hover:shadow-amber-400/30"
             >
-              {showAll ? "View Less Projects" : "View All Projects"}
+              <span className="flex items-center gap-2">
+                {showAll ? (
+                  <>
+                    View Less Projects
+                    <ChevronUp className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
+                  </>
+                ) : (
+                  <>
+                    View All Projects
+                    <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
+                  </>
+                )}
+              </span>
             </button>
           )}
         </div>
+
+        {/* Decorative background elements */}
+        <div className="absolute top-20 right-10 w-72 h-72 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-amber-400/5 rounded-full blur-3xl pointer-events-none"></div>
       </section>
     </Element>
   );
