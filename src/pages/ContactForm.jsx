@@ -24,24 +24,42 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // FIXED: Correct API endpoint path
     const BASE_URL = import.meta.env.DEV
       ? "http://localhost:5000"
       : "https://your-live-backend.com";
 
     try {
       setLoading(true);
-      await axios.post(`${BASE_URL}/send`, formData, {
+      setErrorMessage('');
+
+      // FIXED: Correct endpoint - adjust based on your setup
+      const response = await axios.post(`${BASE_URL}/api/emailSend`, formData, {
         headers: {
           'Content-Type': 'application/json',
         },
+        timeout: 10000, // 10 second timeout
       });
 
-      setFormData({ name: '', email: '', message: '' });
-      setIsSubmitted(true);
-      setErrorMessage('');
+      if (response.data.success) {
+        setFormData({ name: '', email: '', message: '' });
+        setIsSubmitted(true);
+      } else {
+        throw new Error(response.data.message || 'Failed to send message');
+      }
     } catch (error) {
       console.error('Failed to send message:', error);
-      setErrorMessage('Failed to send message. Please try again.');
+      
+      // Better error handling
+      if (error.code === 'ECONNABORTED') {
+        setErrorMessage('Request timeout. Please check your connection and try again.');
+      } else if (error.response) {
+        setErrorMessage(error.response.data.message || 'Failed to send message. Please try again.');
+      } else if (error.request) {
+        setErrorMessage('Cannot reach server. Please check your connection.');
+      } else {
+        setErrorMessage('Failed to send message. Please try again.');
+      }
     } finally {
       setLoading(false);
     }
@@ -50,6 +68,7 @@ const ContactForm = () => {
   const resetForm = () => {
     setFormData({ name: '', email: '', message: '' });
     setIsSubmitted(false);
+    setErrorMessage('');
   };
 
   useEffect(() => {
@@ -230,8 +249,7 @@ const ContactForm = () => {
             {/* mail button*/}
             <button
              onClick={() => 
-              window.open(`mailto:${email}?
-              subject=contact&body=${encodeURIComponent(message)}`, "_blank")
+              window.open(`mailto:${email}?subject=contact&body=${encodeURIComponent(message)}`, "_blank")
              }
              >
             <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow text-center animate-slideUp" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
@@ -239,7 +257,7 @@ const ContactForm = () => {
                 <SiGmail className="w-6 h-6 text-amber-600" />
               </div>
               <h4 className="font-semibold text-neutral-900 mb-2">Gmail</h4>
-              <p className="text-neutral-600 text-sm">MustaAmeerh@email.com</p>
+              <p className="text-neutral-600 text-sm">MustaAmeerh@gmail.com</p>
             </div>
              </button>
            
