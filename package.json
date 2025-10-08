@@ -41,7 +41,8 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages  -d dist",
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "vercel-build": "vite build"
   },
   "name": "my-portfolio",
   "version": "1.0.0",
