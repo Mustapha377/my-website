@@ -1,14 +1,35 @@
-import webImage from "../asset/img/921shots_so.png"
 import Todoimage from "../asset/img/TodoList.png"
 import porfolioMockup from "../asset/img/porfolioMockup.png"
+import DboxMockup from "../asset/img/DboxMockup.png"
+import { v4 as uuidv4 } from "uuid"
 
 export const projects = [
+
+      {
+      id: uuidv4(),
+      title: "Dbox",
+      about: "A dynamic form builder with backend and frontend separation, built with Node.js, Express, Prisma, PostgreSQL, and React. Users can create, share, and collect data through custom forms without writing code — designed for African needs with offline support, local payment integration, and multi-language options..",
+      tags: ["React", "JavaScript", "tailwindcss", "CSS"],
+      links: { web: "#", github: "https://github.com/Mustapha377/Dbox-form-builder-.git" },
+      image: DboxMockup,
+      status: "in-progress",
+      Features: [
+        "User Dashboard",
+        "Payment Setup",
+        "Analytics",
+        "Shareable Links",
+        "Email Notifications",
+        "Modern UI",
+        "Responsive Design"
+      ]
+    },
+
     {
-      id: 1,
+      id: uuidv4(),
       title: "personal-Website",
       about: "This project is part of my personal portfolio website, designed to highlight my technical skills and design approach. It's built using React, styled with Tailwind CSS, and animated using Framer Motion. The goal was to create a fast, responsive, and visually engaging platform where I can present my development work, share ideas, and connect with potential collaborators or clients",
       tags: ["React", "JavaScript", "tailwindcss", "CSS"],
-      links: { web: "https://mustapha377.github.io/my-website/", code: "#" },
+      links: { web: "https://mustapha377.github.io/my-website/", github: "https://github.com/Mustapha377/my-website.git" },
       image: porfolioMockup,
       status: "completed", // "completed", "in-progress", or "planning"
       Features: [
@@ -20,110 +41,22 @@ export const projects = [
       ]
     },
     {
-      id: 2,
+      id: uuidv4(),
       title: "Todo-List",
-      about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at neque vitae felis elementum malesuada. Sed risus velit, sodales quis molestie et, venenatis quis tortor.",
+      about: "A simple and responsive Todo List web app that allows users to create, read, update, and delete tasks. Built to demonstrate CRUD operations, local storage, and UI/UX skills.",
       tags: ["React", "JavaScript", "tailwindcss", "CSS"],
-      links: { web: "https://mustapha377.github.io/Todo-list-page/", code: "#" },
+      links: { web: "https://mustapha377.github.io/Todo-list-page/", github: "https://github.com/Mustapha377/Todo-list-page.git" },
       image: Todoimage,
-      status: "in-progress",
-      Features: [
-        "Responsive Design", 
-        "Smooth Navigation & Scrolling", 
-        "Github & Live Demo Links", 
-        "Project Showcase with Details"
-      ]
-    },
-    {
-      id: 3,
-      title: "My-Website",
-      about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at neque vitae felis elementum malesuada. Sed risus velit, sodales quis molestie et, venenatis quis tortor.",
-      tags: ["React", "JavaScript", "tailwindcss", "CSS"],
-      links: { web: "https://mustapha377.github.io/my-website/", code: "#" },
-      image: webImage,
       status: "completed",
       Features: [
-        "Responsive Design", 
-        "Smooth Navigation & Scrolling", 
-        "Github & Live Demo Links", 
-        "Project Showcase with Details"
+         "Add new todo",
+        "Edit existing todo",
+        "Mark task as completed",
+        "Delete task",
+        "View all, completed, or pending tasks"
       ]
     },
-    {
-      id: 4,  
-      title: "Todo-List",
-      about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at neque vitae felis elementum malesuada.",
-      tags: ["React", "JavaScript", "tailwindcss", "CSS"],
-      links: { web: "https://mustapha377.github.io/Todo-list-page/", code: "#" },
-      image: Todoimage,
-      status: "planning",
-      Features: [
-        "Responsive Design", 
-        "Smooth Navigation & Scrolling", 
-        "Github & Live Demo Links", 
-        "Project Showcase with Details"
-      ]
-    },
-    {
-      id: 5,
-      title: "My-Website",
-      about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at neque vitae felis elementum malesuada.",
-      tags: ["React", "JavaScript", "tailwindcss", "CSS"],
-      links: { web: "https://mustapha377.github.io/my-website/", code: "#" },
-      image: webImage,
-      status: "completed",
-      Features: [
-        "Responsive Design", 
-        "Smooth Navigation & Scrolling", 
-        "Github & Live Demo Links", 
-        "Project Showcase with Details"
-      ]
-    },
-    {
-      id: 6,
-      title: "Todo-List",
-      about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at neque vitae felis elementum malesuada.",
-      tags: ["React", "JavaScript", "tailwindcss", "CSS"],
-      links: { web: "https://mustapha377.github.io/Todo-list-page/", code: "#" },
-      image: Todoimage,
-      status: "in-progress",
-      Features: [
-        "Responsive Design", 
-        "Smooth Navigation & Scrolling", 
-        "Github & Live Demo Links", 
-        "Project Showcase with Details"
-      ]
-    },
-    {
-      id: 7,
-      title: "My-Website",
-      about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at neque vitae felis elementum malesuada.",
-      tags: ["React", "JavaScript", "tailwindcss", "CSS"],
-      links: { web: "https://mustapha377.github.io/my-website/", code: "#" },
-      image: webImage,
-      status: "completed",
-      Features: [
-        "Responsive Design", 
-        "Smooth Navigation & Scrolling", 
-        "Github & Live Demo Links", 
-        "Project Showcase with Details"
-      ]
-    },
-    {
-      id: 8,  
-      title: "Todo-List",
-      about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at neque vitae felis elementum malesuada.",
-      tags: ["React", "JavaScript", "tailwindcss", "CSS"],
-      links: { web: "https://mustapha377.github.io/Todo-list-page/", code: "#" },
-      image: Todoimage,
-      status: "in-progress",
-      Features: [
-        "Responsive Design", 
-        "Smooth Navigation & Scrolling", 
-        "Github & Live Demo Links", 
-        "Project Showcase with Details"
-      ]
-    },
+    
 ];
 
 // Helper function to get status badge details

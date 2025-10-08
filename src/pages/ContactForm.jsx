@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Element } from 'react-scroll';
-import { Mail, User, Send, MessageSquare, CheckCircle2 } from 'lucide-react';
-import Comment from '../component/Comment';
+import { Mail, User, Send, MessageSquare, CheckCircle2, } from 'lucide-react';
+import { SiGmail } from "react-icons/si";
+import { FaWhatsapp } from "react-icons/fa";
+import { MdSms } from "react-icons/md";
+import SocialMediaHandles from '../component/SocialMediaHandles';
 
 const ContactForm = () => {
+  const email = "mustaAmeerh@gmail.com";
+  const phone = "+2349037849695";
+  const message = "Hello! Mr.Ameer"
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -112,7 +118,7 @@ const ContactForm = () => {
                           onChange={handleChange}
                           onFocus={() => setFocusedField('name')}
                           onBlur={() => setFocusedField(null)}
-                          placeholder="John Doe"
+                          placeholder="Ameer Ado"
                           required
                           className="w-full pl-12 pr-4 py-4 bg-neutral-700/50 border-2 border-neutral-600 rounded-xl text-white placeholder-neutral-500 focus:outline-none focus:border-amber-400 focus:bg-neutral-700 transition-all duration-300"
                         />
@@ -137,7 +143,7 @@ const ContactForm = () => {
                           onChange={handleChange}
                           onFocus={() => setFocusedField('email')}
                           onBlur={() => setFocusedField(null)}
-                          placeholder="john@example.com"
+                          placeholder="Ameer@example.com"
                           required
                           className="w-full pl-12 pr-4 py-4 bg-neutral-700/50 border-2 border-neutral-600 rounded-xl text-white placeholder-neutral-500 focus:outline-none focus:border-amber-400 focus:bg-neutral-700 transition-all duration-300"
                         />
@@ -213,41 +219,57 @@ const ContactForm = () => {
               </div>
             </div>
 
-            {/* Comment Component */}
+            {/* SocialMediaHandles Component */}
             <div className="mt-8">
-              <Comment />
+              <SocialMediaHandles />
             </div>
           </div>
 
           {/* Contact Info Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {/* mail button*/}
+            <button
+             onClick={() => 
+              window.open(`mailto:${email}?
+              subject=contact&body=${encodeURIComponent(message)}`, "_blank")
+             }
+             >
             <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow text-center animate-slideUp" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
               <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-6 h-6 text-amber-600" />
+                <SiGmail className="w-6 h-6 text-amber-600" />
               </div>
-              <h4 className="font-semibold text-neutral-900 mb-2">Email</h4>
-              <p className="text-neutral-600 text-sm">your@email.com</p>
+              <h4 className="font-semibold text-neutral-900 mb-2">Gmail</h4>
+              <p className="text-neutral-600 text-sm">MustaAmeerh@email.com</p>
             </div>
-
+             </button>
+           
+           {/* whatsapp button*/}
+           <button
+           onClick={() =>
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank")
+           }>
             <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow text-center animate-slideUp" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
               <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-amber-600" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.4389.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
+                <FaWhatsapp className="w-6 h-6 text-amber-600"/>
               </div>
-              <h4 className="font-semibold text-neutral-900 mb-2">GitHub</h4>
-              <p className="text-neutral-600 text-sm">@yourusername</p>
+              <h4 className="font-semibold text-neutral-900 mb-2">whatsapp</h4>
+              <p className="text-neutral-600 text-sm">+2349037849695</p>
             </div>
+           </button>
 
+           {/* SMS button */}
+           <button
+            onClick={() => 
+              window.open(`sms:${phone}?body=${encodeURIComponent(message)}`, "_blank")
+            }>
             <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow text-center animate-slideUp" style={{ animationDelay: '0.7s', animationFillMode: 'both' }}>
               <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-amber-600" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
+                <MdSms className="w-6 h-6 text-amber-600" />
               </div>
-              <h4 className="font-semibold text-neutral-900 mb-2">LinkedIn</h4>
-              <p className="text-neutral-600 text-sm">@yourprofile</p>
+              <h4 className="font-semibold text-neutral-900 mb-2">SMS</h4>
+              <p className="text-neutral-600 text-sm">09037849695</p>
             </div>
+           </button>
           </div>
         </div>
 

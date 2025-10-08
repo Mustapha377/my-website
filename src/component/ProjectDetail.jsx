@@ -125,7 +125,7 @@ const ProjectDetails = () => {
             >
               <button className="group flex items-center gap-2 px-6 py-3 bg-neutral-700 text-white rounded-lg font-semibold hover:bg-neutral-600 transition-all duration-300 hover:scale-105 hover:shadow-xl">
                 <Github className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                View Code
+                View repo
               </button>
             </a>
           </div>

@@ -14,11 +14,11 @@ const Box = ({ projects, showAll }) => {
   return (
     <div className="space-y-10">
       <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {VisibleProjects.map((project, index) => {
+        {VisibleProjects.map((project) => {
           const statusConfig = getStatusConfig(project.status);
           
           return (
-            <SlideUpAnimation key={index}>
+            <SlideUpAnimation key={project.id}>
               <div 
                 className="group relative w-full rounded-2xl border-2 border-neutral-700 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 h-full bg-neutral-800 overflow-hidden"
                 onMouseEnter={() => setHoveredProject(project.id)}
@@ -101,7 +101,7 @@ const Box = ({ projects, showAll }) => {
                   <div className="flex items-center gap-3 pt-2">
                     {/* Live Demo Link */}
                     <a
-                      href={project.links.web}
+                      href={project.links.web || project.links?.web || "#"}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group/btn flex items-center gap-2 text-amber-400 hover:text-amber-300 text-sm font-semibold hover:underline transition-colors"

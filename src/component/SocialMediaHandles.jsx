@@ -3,7 +3,7 @@ import { SocialIcons, } from "./Social_Icons";
 import SlideUpAnimation from "./SlideUpAnimation";
 
 
-const Comment = () => {
+const SocialMediaHandles = () => {
 
  const [activeLink, setActiveLink] = useState(null);
  
@@ -76,4 +76,4 @@ const Comment = () => {
     )
 }
 
-export default Comment;
+export default SocialMediaHandles;

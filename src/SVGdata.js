@@ -9,7 +9,7 @@ export const SVG =[
       source: webdev_svg,
       heading: "Web Development",
       Content: "I build fast, responsive, and modern websites tailored to your needs. Whether it's a simple landing page or a full company website, I ensure mobile-friendly design and clean code using the latest web technologies like ",
-      list: ["React.js", "Tailwind.css", "Javascricpt.js","Node.js", "PHP", ]
+      list: ["React.js", "Tailwind.css", "Javascricpt.js","Node.js", ]
     },
      {
       id: 2,
