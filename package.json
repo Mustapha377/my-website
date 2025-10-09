@@ -1,19 +1,30 @@
 {
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "vite.config.js",
+  "homepage": "http://mustapha377.github.io/full-stack-porfolio/",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
     "@vitejs/plugin-react": "^4.3.4",
     "aos": "^2.3.4",
     "axios": "^1.11.0",
-    "body-parser": "^1.20.3",
-    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "emailjs-com": "^3.2.0",
-    "env": "^0.0.2",
-    "express": "^4.21.2",
     "framer-motion": "^11.15.0",
     "lucide": "^0.533.0",
     "lucide-react": "^0.533.0",
-    "nodemailer": "^7.0.9",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.5.0",
@@ -22,8 +33,7 @@
     "react-scroll": "^1.9.0",
     "react-simple-typewriter": "^5.0.1",
     "tailwind-scrollbar-hide": "^4.0.0",
-    "uuid": "^13.0.0",
-    "yarn": "^1.22.22"
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-strip": "^3.0.4",
@@ -34,23 +44,5 @@
     "rollup-plugin-visualizer": "^6.0.3",
     "tailwindcss": "^4.1.11",
     "vite": "^6.0.4"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages  -d dist",
-    "start": "react-scripts start",
-    "vercel-build": "vite build"
-  },
-  "name": "my-portfolio",
-  "version": "1.0.0",
-  "homepage": "http://mustapha377.github.io/full-stack-porfolio/",
-  "description": "",
-  "main": "vite.config.js",
-  "type": "module",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }
