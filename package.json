@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
     "@vitejs/plugin-react": "^4.3.4",
-    "axios": "^1.7.9",
+    "aos": "^2.3.4",
+    "axios": "^1.11.0",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
@@ -9,16 +11,28 @@
     "env": "^0.0.2",
     "express": "^4.21.2",
     "framer-motion": "^11.15.0",
-    "nodemailer": "^7.0.9",
+    "lucide": "^0.533.0",
+    "lucide-react": "^0.533.0",
+    "nodemailer": "^6.9.16",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.14.0",
-    "react-router-dom": "^7.0.2",
+    "react-router-dom": "^7.7.1",
     "react-scroll": "^1.9.0",
-    "react-simple-typewriter": "^5.0.1"
+    "react-simple-typewriter": "^5.0.1",
+    "tailwind-scrollbar-hide": "^4.0.0",
+    "uuid": "^13.0.0",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
+    "@rollup/plugin-strip": "^3.0.4",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "autoprefixer": "^10.4.21",
     "gh-pages": "^6.2.0",
+    "postcss": "^8.5.6",
+    "rollup-plugin-visualizer": "^6.0.3",
+    "tailwindcss": "^4.1.11",
     "vite": "^6.0.4"
   },
   "scripts": {
@@ -26,7 +40,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages  -d dist"
+    "deploy": "gh-pages  -d dist",
+    "start": "react-scripts start",
+    "vercel-build": "vite build"
   },
   "name": "my-portfolio",
   "version": "1.0.0",
