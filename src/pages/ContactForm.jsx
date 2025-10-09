@@ -24,21 +24,16 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // FIXED: Correct API endpoint path
-    const BASE_URL = import.meta.env.DEV
-      ? "http://localhost:5000"
-      : "https://your-live-backend.com";
-
     try {
       setLoading(true);
       setErrorMessage('');
 
-      // FIXED: Correct endpoint - adjust based on your setup
-      const response = await axios.post(`${BASE_URL}/api/emailSend`, formData, {
+      // FIXED: Use relative path for Vercel serverless function
+      const response = await axios.post('/api/emailSend', formData, {
         headers: {
           'Content-Type': 'application/json',
         },
-        timeout: 10000, // 10 second timeout
+        timeout: 15000, // 15 second timeout for cold starts
       });
 
       if (response.data.success) {
