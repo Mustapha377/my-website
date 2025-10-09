@@ -38,7 +38,7 @@ const Nav = () => {
           onClick={ToggleMenu}>
           <span className="line"></span>
           <span className="line"></span>
-            <span className="line"></span>
+           <span className="line"></span>
           </button>
           
             <nav className="container" >

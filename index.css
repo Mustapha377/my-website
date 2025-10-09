@@ -27,11 +27,12 @@ h6{
 }
 
 .Divider{
-    width: 100%;
+    width: 50%;
     height: 2px;
     background-color: #0b0c10;
     border:none;
-    margin-top: 3rem;
+    margin-top: 6rem;
+    opacity: 0.5;
 
 }
       
@@ -123,6 +124,14 @@ strong{
 
 }
 
+.typewriter-container {
+    width: 100%; /* Set a fixed width */
+    white-space: normal; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow */
+    word-wrap: break-word;
+    height: fit-content;
+  }
+
 .logo{
     width: 24px;
     height: 24px;
@@ -144,7 +153,7 @@ strong{
     display: flex;
     text-indent: 10px;
     margin-left: auto;
-    padding-right: 100px;
+    padding-right: 50px;
     gap: 25px;
     
     
@@ -222,11 +231,11 @@ p{
 
 .intro{
     color: rgb(17, 15, 15);
-    margin-top: 3rem;
+    margin-top: 1rem;
     padding: 20px;
     text-indent: px;
     line-height: 1.7;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
     font-family: "Overlock", serif;
 
 }
@@ -361,6 +370,7 @@ p{
    margin-right: 8px;}
 
 .project-box{
+    width: 100%;
     border-radius: 30px;
     background-color:#fff ;
     /* background: linear-gradient(145deg, #cacaca, #f0f0f0); */
@@ -370,6 +380,79 @@ p{
     height: 150px;   
     
 }
+  
+  .portfolio {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: center;
+  }
+  
+  .project-card {
+    /* background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    max-width: 600px;
+    width: 100%;
+    text-align: center; */
+
+    border: 1px solid #b1bbc7;
+    padding: 10px;
+    max-width: 600px;
+    /* width: 100%; */
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    border-radius: 30px ;
+    box-shadow: 0 0 30px 15px #b1bbc7,
+    -5px -5px 10px rgb(5, 58, 75);
+    margin-bottom: 8rem;
+  }
+
+.project-image {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+  }
+  
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  
+  .button {
+    width: 120px;
+    padding: 0.5rem 1rem;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover{
+        background-color: #45a29e;
+        box-shadow: 0 1px 1px 1px rgb(#aaa,0.6);
+    } 
+  }
+  
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  .tag {
+    background-color: #efefef;
+    border-radius: 15px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    color: #333;
+  }
+  
 
 .project-btn{
     background-color: #45a29e;
@@ -427,18 +510,20 @@ div.project-lan h3{
 }
 
 .project-about-con{
-    width: 300px;
+    width: 100%;
+    max-width: 250px;
     line-height: 1.5;
     margin: 10px 0;
 overflow: hidden;
 }
 
 .project-txt-con{
-   max-width: 400px;
-   padding: 1rem;
+   /* padding: 1rem; */
+   width: 100%;
 }
 
 .project-text{
+    width: 100%;
     overflow: hidden;
     transition: height 0.3s ease;
     word-wrap: break-word;
@@ -473,69 +558,66 @@ overflow: hidden;
    
 }
 
-form{
-    max-width: 600px;
-    text-align: center;
-    margin: 20px ;
 
-
-
-input, textarea{
-    border: 0 ; 
-    outline:0;
-    padding: 1rem;
-    border-radius: 15px;
-    display: block;
+.form-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form {
     width: 100%;
-    margin-top: 1rem;
-    box-shadow: 0 1px 1px rgb(black, 0.1);
-    margin-right: 30px;
-
-    &:focus{
-        box-shadow: 0 0px 2px rgb(red, 1, );
-    }
-}
-
-.submit-btn{
+    max-width: 300px; /* Set the maximum width */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center elements horizontally */
+  }
+  
+  .cf {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; /* Ensure full width */
+  }
+  
+  .half {
+    width: 100%; /* Ensure full width on small screens */
+    margin-bottom: 10px;
+  }
+  
+  .input,
+  textarea {
+    width: 100%; /* Ensure they take the full width of the form */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  .submit-btn {
+    background-color:#45a29e;
     color: white;
-    background-color: #45a29e;
-    border-radius: 20px;
-    cursor: pointer;
     border: none;
-    height: 35px;
-
-    &:hover{
-        background-color: black;
-        box-shadow: 0 1px 1px 1px rgb(#aaa,0.6);
-    }
-}
-
-textarea{
-    height: 150px;
-}
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    align-self: center; /* Center the submit button */
   }
-
-  .form-con{
-    border-radius: 50px;
-  background: linear-gradient(145deg, #cacaca, #f0f0f0);
-  box-shadow: 20px 20px 60px #bebebe,
-   -20px -20px 60px #ffffff;
-}
-
-  .half{
-   /* float: left; */
-   width: 100%;
-   margin-bottom: 1rem;
-
+  
+  .submit-btn:hover {
+    background-color: #05534e;
   }
+  
 
-  .right{
-    width: 100%;
-  }
-
-  .left{
-    margin-right: 2%;
-  }
 
   .prompt-overlay{
     position: fixed;
@@ -773,12 +855,11 @@ textarea{
     }
 
     
-    .project-box{
+    /* .project-card{
        
-        height: 20vh;
-        margin-bottom: 10px;
+        height: 80vh;
      }
-    
+     */
         
     
       .profile{
@@ -825,8 +906,11 @@ textarea{
         cursor: pointer;
         font-size: 18px;
         
-    
-       
+      }
+
+      .typewriter-container {
+        max-width: 80%; 
+        height: 150px;
       }
     }
     
@@ -898,8 +982,12 @@ textarea{
 
 
 .home-section{
-    padding: 3rem 0;
+    padding: 1rem 0;
 }    
+
+.intro{
+    margin: 3rem 0;
+}
         
     .section-container{
       padding: 80px;
@@ -914,7 +1002,9 @@ textarea{
         font-size: 3rem;
     }
 
-   
+    .typewriter-container {
+        max-width: 80%; /* Adjust the width for larger screens */
+      }
         
       
        
@@ -931,6 +1021,10 @@ textarea{
             flex-wrap: wrap;
 
          }
+
+         /* .input{
+            height: 10px;
+         }
     
     
           textarea{
@@ -938,9 +1032,18 @@ textarea{
             font-size: 1rem;
     
           }
+
+          .half {
+            width: 48%; /* 
+            margin-right: 4%;
+          }
+        
+          .half.right {
+            margin-right: 0;
+          } */
     
           .submit-btn{
-            width:300px;
+            width:250px;
             height: 50px;
             font-size: 1rem;
           }
