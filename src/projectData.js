@@ -1,15 +1,12 @@
 import Todoimage from "../asset/img/TodoList.png"
 import porfolioMockup from "../asset/img/porfolioMockup.png"
 import DboxMockup from "../asset/img/DboxMockup.png"
-import { v4 as uuidv4 } from "uuid"
 
-const savedProjects =
- JSON.parse(localStorage.getItem("projects")) || [];
 
 export const projects = [
 
       {
-      id: uuidv4(),
+      id: "Dbox",
       title: "Dbox",
       about: "A dynamic form builder with backend and frontend separation, built with Node.js, Express, Prisma, PostgreSQL, and React. Users can create, share, and collect data through custom forms without writing code — designed for African needs with offline support, local payment integration, and multi-language options..",
       tags: ["React", "JavaScript", "tailwindcss", "CSS"],
@@ -28,7 +25,7 @@ export const projects = [
     },
 
     {
-      id: uuidv4(),
+      id: "personal-Website",
       title: "personal-Website",
       about: "This project is part of my personal portfolio website, designed to highlight my technical skills and design approach. It's built using React, styled with Tailwind CSS, and animated using Framer Motion. The goal was to create a fast, responsive, and visually engaging platform where I can present my development work, share ideas, and connect with potential collaborators or clients",
       tags: ["React", "JavaScript", "tailwindcss", "CSS"],
@@ -44,7 +41,7 @@ export const projects = [
       ]
     },
     {
-      id: uuidv4(),
+      id: "Todo-List",
       title: "Todo-List",
       about: "A simple and responsive Todo List web app that allows users to create, read, update, and delete tasks. Built to demonstrate CRUD operations, local storage, and UI/UX skills.",
       tags: ["React", "JavaScript", "tailwindcss", "CSS"],
@@ -62,8 +59,6 @@ export const projects = [
     
 ];
 
-savedProjects.push(projects);
-localStorage.setItem("projects", JSON.stringify(projects));
 
 // Helper function to get status badge details
 export const getStatusConfig = (status) => {
