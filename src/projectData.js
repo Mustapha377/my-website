@@ -3,6 +3,9 @@ import porfolioMockup from "../asset/img/porfolioMockup.png"
 import DboxMockup from "../asset/img/DboxMockup.png"
 import { v4 as uuidv4 } from "uuid"
 
+const savedProjects =
+ JSON.parse(localStorage.getItem("projects")) || [];
+
 export const projects = [
 
       {
@@ -58,6 +61,9 @@ export const projects = [
     },
     
 ];
+
+savedProjects.push(projects);
+localStorage.setItem("projects", JSON.stringify(projects));
 
 // Helper function to get status badge details
 export const getStatusConfig = (status) => {
