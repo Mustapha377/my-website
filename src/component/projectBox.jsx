@@ -110,11 +110,11 @@ const Box = ({ projects, showAll }) => {
                       Live Demo
                     </a>
 
-                    {/* Details Button */}
+                    {/* Details Button - FIXED NAVIGATION PATH */}
                     <button
                       onClick={() => {
                         sessionStorage.setItem("scrolly", window.scrollY);
-                        navigate(`project/${project.id}`);
+                        navigate(`/project/${project.id}`);
                       }}
                       type='button'
                       className="group/btn ml-auto text-sm px-5 py-2.5 rounded-lg flex items-center gap-2 cursor-pointer bg-amber-500 text-neutral-900 font-semibold hover:bg-amber-600 hover:scale-105 transition-all shadow-lg hover:shadow-amber-500/50 focus:outline-none focus:ring-2 focus:ring-amber-400"
